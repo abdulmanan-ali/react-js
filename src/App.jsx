@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Navbar from './Components/Navbar'
 import Textform from './Components/Textform'
+import About from './Components/About'
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <Textform />
+      {/* <Textform /> */}
+      <About />
     </>
   )
 }
