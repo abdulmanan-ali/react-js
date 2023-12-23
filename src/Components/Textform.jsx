@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Textform = () => {
+const Textform = (props) => {
     const [text, setText] = useState("")
 
     const UpperCase = () => {
@@ -23,7 +23,7 @@ const Textform = () => {
 
     return (
         <>
-            <div className="container my-3" style={{ border: '4px solid black' }}>
+            <div className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                 <div className="mb-3" style={{ margin: '12px' }}>
                     <h3>Enter your text</h3>
                     <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange}></textarea>

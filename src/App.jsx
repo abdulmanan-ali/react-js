@@ -5,17 +5,29 @@ import About from './Components/About'
 
 
 function App() {
-  // const [text, setText] = useState("")
 
-  // const onChange = (event) => {
-  //   setText(event.target.value);
-  // }
+  const [mode, setMode] = useState('light')
+  const [text, setText] = useState('Enable Dark Mode')
+
+
+  const enableDark = () => {
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.backgroundColor = '#192230'
+      setText('Enable Light Mode')
+    }
+    else {
+      setMode('light')
+      document.body.style.backgroundColor = 'White'
+      setText('Enable Dark Mode')
+    }
+  }
 
   return (
     <>
-      <Navbar />
-      {/* <Textform /> */}
-      <About />
+      <Navbar mode={mode} enableDark={enableDark} text={text}/>
+      <Textform mode={mode}/>
+      {/* <About /> */}
     </>
   )
 }
