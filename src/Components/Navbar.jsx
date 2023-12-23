@@ -1,5 +1,4 @@
 import { useState } from "react"
-
 const Navbar = (props) => {
     const [text, setText] = useState('Enable Dark Mode')
 

@@ -26,7 +26,7 @@ const Textform = (props) => {
             <div className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                 <div className="mb-3" style={{ margin: '12px' }}>
                     <h3>Enter your text</h3>
-                    <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange}></textarea>
+                    <textarea className={`form-control text-${props.mode === 'light' ? 'dark' : 'light'}}`} id="myBox" rows="8" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'light' ? 'white' : 'gray' }}></textarea>
                     <button style={{ margin: '12px' }} className="mx-3 btn btn-dark" onClick={UpperCase}>ToUpperCase</button>
                     <button style={{ margin: '12px' }} className="btn btn-dark" onClick={lowerCase}>to-lower-case</button>
                     <button style={{ margin: '12px' }} className="btn btn-dark" onClick={clearText}>Clear Text</button>
