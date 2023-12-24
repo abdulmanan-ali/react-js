@@ -3,11 +3,31 @@ import Navbar from './Components/Navbar'
 import Textform from './Components/Textform'
 import Alert from './Components/Alert'
 import About from './Components/About'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  BrowserRouter
+} from "react-router-dom";
+// import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
+// const router = createBrowserRouter(
+//   [
+//     {
+//       Path: "/", element: <Textform />,
+//       children: [
+//         { Path: "/", element: <Textform /> },
+//         { Path: "/home", element: <About /> }
+//       ]
+//     }
+//   ]
+// )
 
 
 function App() {
 
-  const [alert, setAlert] = useState("null")
+  const [alert, setAlert] = useState('')
   const [mode, setMode] = useState('light')
   const [text, setText] = useState('Enable Dark Mode')
 
@@ -15,6 +35,9 @@ function App() {
     setAlert({
       msg: msg
     })
+    setTimeout(() => {
+      setAlert('')
+    }, 1500);
   }
 
 
@@ -34,13 +57,20 @@ function App() {
   }
 
 
-
   return (
     <>
+    <BrowserRouter>
       <Navbar mode={mode} enableDark={enableDark} text={text} />
-      <Alert alert={alert} />
-      <Textform mode={mode} />
-      {/* <About /> */}
+      {/* <RouterProvider router={router} /> */}
+      <div>
+        
+         <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Textform mode={mode} />} />
+          </Routes> 
+        {/* <Alert alert={alert} /> */}
+      </div>
+      </BrowserRouter>
     </>
   )
 }

@@ -67,7 +67,7 @@ function About() {
         </div>
       </div>
       <div className="container my-3">
-        <button onClick={toggleStyle} class="btn btn-info">{btnText}</button>
+        <button onClick={toggleStyle} className="btn btn-info">{btnText}</button>
       </div>
     </div>
   )
